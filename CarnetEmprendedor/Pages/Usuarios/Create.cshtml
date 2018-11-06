@@ -1,0 +1,63 @@
+﻿@page
+@model CarnetEmprendedor.Pages.Usuarios.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Usuario.Matricula" class="control-label"></label>
+                <input asp-for="Usuario.Matricula" class="form-control" />
+                <span asp-validation-for="Usuario.Matricula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.Nombre" class="control-label"></label>
+                <input asp-for="Usuario.Nombre" class="form-control" />
+                <span asp-validation-for="Usuario.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.ApellidoP" class="control-label"></label>
+                <input asp-for="Usuario.ApellidoP" class="form-control" />
+                <span asp-validation-for="Usuario.ApellidoP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.ApellidoM" class="control-label"></label>
+                <input asp-for="Usuario.ApellidoM" class="form-control" />
+                <span asp-validation-for="Usuario.ApellidoM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.MateriaId" class="control-label"></label>
+                <select asp-for="Usuario.MateriaId" class ="form-control" asp-items="ViewBag.MateriaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.Semestre" class="control-label"></label>
+                <select asp-for="Usuario.Semestre" asp-items="Html.GetEnumSelectList<Usuario.ESemestre>()" class="form-control"></select>
+                <span asp-validation-for="Usuario.Semestre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.Puntos" class="control-label"></label>
+                <input asp-for="Usuario.Puntos" value="0" class="form-control" />
+                <span asp-validation-for="Usuario.Puntos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

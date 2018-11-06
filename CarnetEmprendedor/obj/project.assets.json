@@ -12225,11 +12225,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\jaime\\source\\repos\\CarnetEmprendedor\\CarnetEmprendedor\\CarnetEmprendedor.csproj",
+      "projectUniqueName": "C:\\Users\\jaime\\Desktop\\carnetEmprendedorCore\\CarnetEmprendedor\\CarnetEmprendedor.csproj",
       "projectName": "CarnetEmprendedor",
-      "projectPath": "c:\\users\\jaime\\source\\repos\\CarnetEmprendedor\\CarnetEmprendedor\\CarnetEmprendedor.csproj",
+      "projectPath": "C:\\Users\\jaime\\Desktop\\carnetEmprendedorCore\\CarnetEmprendedor\\CarnetEmprendedor.csproj",
       "packagesPath": "C:\\Users\\jaime\\.nuget\\packages\\",
-      "outputPath": "c:\\users\\jaime\\source\\repos\\CarnetEmprendedor\\CarnetEmprendedor\\obj\\",
+      "outputPath": "C:\\Users\\jaime\\Desktop\\carnetEmprendedorCore\\CarnetEmprendedor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

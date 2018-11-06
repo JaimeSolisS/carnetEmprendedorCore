@@ -1,0 +1,73 @@
+﻿@page
+@model CarnetEmprendedor.Pages.Eventos.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Evento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Evento.CategoriaEventoId" class="control-label"></label>
+                <select asp-for="Evento.CategoriaEventoId" class ="form-control" asp-items="ViewBag.CategoriaEventoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Evento.PuntosEvento" class="control-label"></label>
+                <input asp-for="Evento.PuntosEvento" class="form-control" />
+                <span asp-validation-for="Evento.PuntosEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Evento.Nombre" class="control-label"></label>
+                <input asp-for="Evento.Nombre" class="form-control" />
+                <span asp-validation-for="Evento.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Evento.Descripcion" class="control-label"></label>
+                <textarea style="height: 150px;" asp-for="Evento.Descripcion" class="form-control" ></textarea>
+                <span asp-validation-for="Evento.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Evento.Inicio" class="control-label"></label>
+                <input asp-for="Evento.Inicio" class="form-control" />
+                <span asp-validation-for="Evento.Inicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Evento.Fin" class="control-label"></label>
+                <input asp-for="Evento.Fin" class="form-control" />
+                <span asp-validation-for="Evento.Fin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Evento.Lugar" class="control-label"></label>
+                <input asp-for="Evento.Lugar" class="form-control" />
+                <span asp-validation-for="Evento.Lugar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Evento.Imagen" class="control-label"></label>
+                <input type="file" name="files" multiple class="form-control" />
+               
+            </div>
+            <div class="form-group">
+                <label asp-for="Evento.NumBoletos" class="control-label"></label>
+                <input asp-for="Evento.NumBoletos" class="form-control" />
+                <span asp-validation-for="Evento.NumBoletos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

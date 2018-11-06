@@ -1,0 +1,73 @@
+﻿@page
+@model CarnetEmprendedor.Pages.Eventos.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Evento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.Categoria)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evento.Categoria.CategoriaEvento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.PuntosEvento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evento.PuntosEvento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evento.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.Descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evento.Descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.Inicio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evento.Inicio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.Fin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evento.Fin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.Lugar)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evento.Lugar)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.Imagen)
+        </dt>
+        <dd>
+            <img src="~/images/@Html.DisplayFor(model =>model.Evento.Imagen)" width="200" height="300" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.NumBoletos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evento.NumBoletos)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Evento.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
