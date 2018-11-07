@@ -1,0 +1,34 @@
+﻿@page
+@model CarnetEmprendedor.Pages.Eventos.Interesados.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ListaInteresado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ListaInteresado.Matricula)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ListaInteresado.Matricula)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ListaInteresado.Evento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ListaInteresado.Evento.Descripcion)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ListaInteresado.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

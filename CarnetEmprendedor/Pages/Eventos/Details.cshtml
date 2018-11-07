@@ -57,7 +57,7 @@
             @Html.DisplayNameFor(model => model.Evento.Imagen)
         </dt>
         <dd>
-            <img src="~/images/@Html.DisplayFor(model =>model.Evento.Imagen)" width="200" height="300" />
+            <img src="@Html.DisplayFor(model =>model.Evento.Imagen)" alt="error" width="200" height="300" />
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Evento.NumBoletos)
@@ -66,8 +66,43 @@
             @Html.DisplayFor(model => model.Evento.NumBoletos)
         </dd>
     </dl>
+    <div id="div2" class="col-md-6">
+        <div class="text text-center">
+            <h4>Interesados</h4>
+            <h4>@Model.NumInteresados asistirán</h4>
+        </div>
+
+
+        <table align="center" class="text-center">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Interesados[0].Matricula)
+                    </th>
+
+
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Interesados)
+                {
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Matricula)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
+
+
+
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Evento.Id">Edit</a> |
+    <a asp-page="./Interesados/Create/" asp-route-id="@Model.Evento.Id" class="btn btn-default">Me interesa</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

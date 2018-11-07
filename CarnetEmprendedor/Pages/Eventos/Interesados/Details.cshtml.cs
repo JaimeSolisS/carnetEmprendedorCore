@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using CarnetEmprendedor.Data;
 
-namespace CarnetEmprendedor.Pages.Eventos
+namespace CarnetEmprendedor.Pages.Eventos.Interesados
 {
     public class DetailsModel : PageModel
     {
@@ -18,10 +18,7 @@ namespace CarnetEmprendedor.Pages.Eventos
             _context = context;
         }
 
-        public Evento Evento { get; set; }
-
-        public IList<ListaInteresado> Interesados { get; set; }
-        public int NumInteresados { get; set; }
+        public ListaInteresado ListaInteresado { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,19 +27,14 @@ namespace CarnetEmprendedor.Pages.Eventos
                 return NotFound();
             }
 
-            Evento = await _context.Evento
-                .Include(e => e.Categoria).FirstOrDefaultAsync(m => m.Id == id);
+            ListaInteresado = await _context.ListaInteresado
+                .Include(l => l.Evento).FirstOrDefaultAsync(m => m.Id == id);
 
-            Interesados = _context.ListaInteresado.Include(t => t.Evento).Where(x => x.EventoId == id).OrderBy(t => t.Matricula)
-                .ToList();
-            NumInteresados = Interesados.Count(); 
-            if (Evento == null)
+            if (ListaInteresado == null)
             {
                 return NotFound();
             }
             return Page();
         }
-
-       
     }
 }

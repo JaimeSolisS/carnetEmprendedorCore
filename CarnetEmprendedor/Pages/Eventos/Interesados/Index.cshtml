@@ -1,5 +1,5 @@
 ﻿@page
-@model CarnetEmprendedor.Pages.Materias.IndexModel
+@model CarnetEmprendedor.Pages.Eventos.Interesados.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,16 +14,22 @@
     <thead>
         <tr>
             <th>
-                Carrera
+                @Html.DisplayNameFor(model => model.ListaInteresado[0].Matricula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListaInteresado[0].Evento)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Materia) {
+@foreach (var item in Model.ListaInteresado) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Evento.Descripcion)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

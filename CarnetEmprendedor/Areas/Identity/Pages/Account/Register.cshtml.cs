@@ -23,8 +23,8 @@ namespace CarnetEmprendedor.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-        private readonly RoleManager<IdentityRole> _RoleManager;
-        private readonly ApplicationDbContext _db; 
+       // private readonly RoleManager<IdentityRole> _RoleManager;
+        //private readonly ApplicationDbContext _db; 
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,

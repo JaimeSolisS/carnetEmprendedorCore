@@ -68,7 +68,8 @@
                 @Html.DisplayFor(modelItem => item.Lugar)
             </td>
             <td>
-                <img id="logo" src="~/images/@item.Imagen" alt="error" />
+                <!--  <img id="logo" src="~/images/@item.Imagen" alt="error" />-->
+                <img id="logo" src="@item.Imagen" alt="error" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NumBoletos)
@@ -77,6 +78,7 @@
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./ListaAsistencias/Index" asp-route-id="@item.Id">Asistencia</a>
             </td>
         </tr>
 }

@@ -92,3 +92,8 @@ C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcore
 C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\Razor\Pages\Usuarios\Details.g.cshtml.cs
 C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\Razor\Pages\Usuarios\Edit.g.cshtml.cs
 C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\Razor\Pages\Usuarios\Index.g.cshtml.cs
+C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\Razor\Pages\Eventos\Interesados\Create.g.cshtml.cs
+C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\Razor\Pages\Eventos\Interesados\Delete.g.cshtml.cs
+C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\Razor\Pages\Eventos\Interesados\Details.g.cshtml.cs
+C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\Razor\Pages\Eventos\Interesados\Edit.g.cshtml.cs
+C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\Razor\Pages\Eventos\Interesados\Index.g.cshtml.cs

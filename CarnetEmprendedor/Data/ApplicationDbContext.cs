@@ -18,5 +18,6 @@ namespace CarnetEmprendedor.Data
         public DbSet<Materia> Materia { get; set; }
         public virtual DbSet<IdentityUser> IdentityUser { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<ListaInteresado> ListaInteresado { get; set; }
     }
 }

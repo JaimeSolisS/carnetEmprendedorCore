@@ -1,5 +1,5 @@
 ﻿@page
-@model CarnetEmprendedor.Pages.Materias.CreateModel
+@model CarnetEmprendedor.Pages.Eventos.Interesados.CreateModel
 
 @{
     ViewData["Title"] = "Create";
@@ -7,16 +7,19 @@
 
 <h2>Create</h2>
 
-<h4>Carrera</h4>
+<h4>ListaInteresado</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label>Nueva carrera</label>
-                <input asp-for="Materia.Nombre" class="form-control" />
-                <span asp-validation-for="Materia.Nombre" class="text-danger"></span>
+                <label asp-for="ListaInteresado.Matricula" class="control-label"></label>
+                <input asp-for="ListaInteresado.Matricula" class="form-control" />
+                <span asp-validation-for="ListaInteresado.Matricula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="ListaInteresado.EventoId" type="hidden" value="@Model.Id" class="form-control" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
