@@ -5,11 +5,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Usuarios</h2>
 
-<p>
+@*<p>
     <a asp-page="Create">Create New</a>
-</p>
+</p>*@
 <table class="table">
     <thead>
         <tr>
@@ -26,7 +26,7 @@
                 @Html.DisplayNameFor(model => model.Usuario[0].ApellidoM)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Usuario[0].Materia)
+                Carrera
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Usuario[0].Semestre)
@@ -62,9 +62,9 @@
                 @Html.DisplayFor(modelItem => item.Puntos)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                @*<a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                @*<a asp-page="./Details" asp-route-id="@item.Id">Detail</a>*@ 
+                <a asp-page="./Delete" asp-route-id="@item.Id"  class="btn btn-danger btn-sm glyphicon glyphicon-trash"></a>
             </td>
         </tr>
 }

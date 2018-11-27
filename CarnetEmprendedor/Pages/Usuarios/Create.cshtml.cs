@@ -17,10 +17,18 @@ namespace CarnetEmprendedor.Pages.Usuarios
         {
             _context = context;
         }
+       // IdentityUserid = user.Id, IdentityUserName=user.UserName
 
-        public IActionResult OnGet()
+       public  string IdentityUserid { get; set; }
+
+       public string IdentityUserName { get; set; }
+
+        public IActionResult OnGet(string identityUserid, string identityUserName)
         {
         ViewData["MateriaId"] = new SelectList(_context.Materia, "Id", "Nombre");
+            Usuario = new Usuario(); 
+            Usuario.IdentityUserId = identityUserid;
+               Usuario.IdentityUserName = identityUserName;
             return Page();
         }
 

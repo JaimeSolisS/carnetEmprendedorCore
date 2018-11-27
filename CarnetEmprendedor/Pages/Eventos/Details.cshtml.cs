@@ -33,7 +33,9 @@ namespace CarnetEmprendedor.Pages.Eventos
             Evento = await _context.Evento
                 .Include(e => e.Categoria).FirstOrDefaultAsync(m => m.Id == id);
 
-            Interesados = _context.ListaInteresado.Include(t => t.Evento).Where(x => x.EventoId == id).OrderBy(t => t.Matricula)
+            Interesados = _context.ListaInteresado.Include(t => t.Evento).Include(T => T.Usuario)
+                .Where(x => x.EventoId == id).OrderBy(t => t.Usuario.Matricula)
+                                                   
                 .ToList();
             NumInteresados = Interesados.Count(); 
             if (Evento == null)

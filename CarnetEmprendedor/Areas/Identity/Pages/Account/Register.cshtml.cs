@@ -65,22 +65,22 @@ namespace CarnetEmprendedor.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
-            [Required]
-            public string Matricula { get; set; }
-            [Required]
-            public string Nombre { get; set; }
-            [Required]
-            public string ApellidoP { get; set; }
-            [Required]
-            public string ApellidoM { get; set; }
-            [Required]
-            public int MateriaId { get; set; }
-            [ForeignKey("MateriaId")]
-            public virtual Materia Materia { get; set; }
-            [Required]
-            public string Semestre { get; set; }
-            [Required]
-            public int Puntos { get; set; }
+            //[Required]
+            //public string Matricula { get; set; }
+            //[Required]
+            //public string Nombre { get; set; }
+            //[Required]
+            //public string ApellidoP { get; set; }
+            //[Required]
+            //public string ApellidoM { get; set; }
+            //[Required]
+            //public int MateriaId { get; set; }
+            //[ForeignKey("MateriaId")]
+            //public virtual Materia Materia { get; set; }
+            //[Required]
+            //public string Semestre { get; set; }
+            //[Required]
+            //public int Puntos { get; set; }
         }
 
         public void OnGet(string returnUrl = null)
@@ -96,7 +96,7 @@ namespace CarnetEmprendedor.Areas.Identity.Pages.Account
                 var user = new IdentityUser {
                     UserName = Input.Email,
                     Email = Input.Email, 
-                    //No me deja agregar campos
+                   
                 };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
@@ -115,7 +115,7 @@ namespace CarnetEmprendedor.Areas.Identity.Pages.Account
                     */
 
                     _logger.LogInformation("User created a new account with password.");
-
+                    
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
@@ -127,7 +127,10 @@ namespace CarnetEmprendedor.Areas.Identity.Pages.Account
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return LocalRedirect(returnUrl);
+                    //var x = LocalRedirect("/Usuarios/Create");
+                    var x = RedirectToPage
+                        ("/Usuarios/Create", new { IdentityUserid = user.Id, IdentityUserName = user.UserName, Area = "" });
+                    return x;
                 }
                 foreach (var error in result.Errors)
                 {

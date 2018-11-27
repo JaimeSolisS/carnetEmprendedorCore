@@ -11,13 +11,18 @@ namespace CarnetEmprendedor.Data
     {
         [Required]
         public int Id { get; set; }
-        [Required]
-        [Display(Name = "Matrícula")]
-        public int Matricula { get; set; }
+        //[Required]
+        //[Display(Name = "Matrícula")]
+        //public string Matricula { get; set; }
        
         public int EventoId { get; set; }
 
         [ForeignKey("EventoId")]
         public virtual Evento Evento { get; set; }
+
+        public int UsuarioId { get; set; }
+
+        [ForeignKey("UsuarioId")]
+        public virtual Usuario Usuario { get; set; }
     }
 }

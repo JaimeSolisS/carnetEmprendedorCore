@@ -15,10 +15,12 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
 </head>
+
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container" style="overflow:auto,">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -26,13 +28,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-page="/Index" class="navbar-brand">CarnetEmprendedor</a>
+                <a asp-page="/Index" class="navbar-brand">
+                    <img src="~/images/Blanco.png"  height="35" />
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
+                    @*<li><a asp-page="/Index">Home</a></li>*@
+                    <li><a asp-page="/MisEventos/Index">Mis Eventos</a></li>
+                    <li><a asp-page="/Contact">Contacto</a></li>
                     <li class="dropdown" data-admin-menu>
                         <a href="#">Admin
                             <span class="glyphicon glyphicon-circle-arrow-down"></span>
@@ -59,7 +63,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - CarnetEmprendedor</p>
+            <p>&copy; 2018 - Carnet Emprendedor</p>
         </footer>
     </div>
 

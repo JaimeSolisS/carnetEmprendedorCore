@@ -5,10 +5,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Todos los eventos</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn">Crear evento</a>
 </p>
 <table class="table">
     <thead>
@@ -22,23 +22,23 @@
             <th>
                 @Html.DisplayNameFor(model => model.Evento[0].Nombre)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Evento[0].Descripcion)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Evento[0].Inicio)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Evento[0].Fin)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Evento[0].Lugar)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Evento[0].Imagen)
-            </th>
+            </th>*@
             <th>
-                @Html.DisplayNameFor(model => model.Evento[0].NumBoletos)
+                Boletos disponibles
             </th>
             <th></th>
         </tr>
@@ -55,18 +55,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Inicio)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Fin)
-            </td>
-            <td>
+            </td>*@
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Lugar)
-            </td>
+            </td>*@
             <td>
                 <!--  <img id="logo" src="~/images/@item.Imagen" alt="error" />-->
                 <img id="logo" src="@item.Imagen" alt="error" />
@@ -75,10 +75,10 @@
                 @Html.DisplayFor(modelItem => item.NumBoletos)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                <a asp-page="./ListaAsistencias/Index" asp-route-id="@item.Id">Asistencia</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id"class="btn btn-sm btn-success glyphicon glyphicon-pencil"></a> |
+                <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm glyphicon glyphicon-th-list"></a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm glyphicon glyphicon-trash"></a>
+                @*<a asp-page="./ListaAsistencias/Index" asp-route-id="@item.Id">Asistencia</a>*@
             </td>
         </tr>
 }

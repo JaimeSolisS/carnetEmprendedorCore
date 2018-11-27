@@ -9,6 +9,7 @@ namespace CarnetEmprendedor.Data
 {
     public class Evento
     {
+        public Evento() { ListaInteresado = new List<ListaInteresado>(); }
         [Required]
         public int Id { get; set; }
 
@@ -48,5 +49,7 @@ namespace CarnetEmprendedor.Data
         [Required]
         [Display(Name = "Número de boletos")]
         public int NumBoletos { get; set; }
+
+        public virtual IList<ListaInteresado> ListaInteresado { get; set; }
     }
 }

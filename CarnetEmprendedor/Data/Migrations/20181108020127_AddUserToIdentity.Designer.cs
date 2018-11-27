@@ -4,14 +4,16 @@ using CarnetEmprendedor.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarnetEmprendedor.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181108020127_AddUserToIdentity")]
+    partial class AddUserToIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,13 +79,11 @@ namespace CarnetEmprendedor.Data.Migrations
 
                     b.Property<int>("EventoId");
 
-                    b.Property<int>("UsuarioId");
+                    b.Property<int>("Matricula");
 
                     b.HasKey("Id");
 
                     b.HasIndex("EventoId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("ListaInteresado");
                 });
@@ -315,13 +315,8 @@ namespace CarnetEmprendedor.Data.Migrations
             modelBuilder.Entity("CarnetEmprendedor.Data.ListaInteresado", b =>
                 {
                     b.HasOne("CarnetEmprendedor.Data.Evento", "Evento")
-                        .WithMany("ListaInteresado")
+                        .WithMany()
                         .HasForeignKey("EventoId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("CarnetEmprendedor.Data.Usuario", "Usuario")
-                        .WithMany("ListaInteresado")
-                        .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

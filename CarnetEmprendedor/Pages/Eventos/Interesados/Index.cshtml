@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ListaInteresado[0].Matricula)
+                @Html.DisplayNameFor(model => model.ListaInteresado[0].Usuario.Matricula)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ListaInteresado[0].Evento)
@@ -26,15 +26,15 @@
 @foreach (var item in Model.ListaInteresado) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Matricula)
+                @Html.DisplayFor(modelItem => item.Usuario.Matricula)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Evento.Descripcion)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-sm btn-success glyphicon glyphicon-pencil"></a> |
+                <a asp-page="./Details" asp-route-id="@item.Id"class="btn btn-primary btn-sm glyphicon glyphicon-th-list"></a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm glyphicon glyphicon-trash"></a>
             </td>
         </tr>
 }

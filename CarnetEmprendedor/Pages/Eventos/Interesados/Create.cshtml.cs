@@ -18,6 +18,7 @@ namespace CarnetEmprendedor.Pages.Eventos.Interesados
             _context = context;
         }
         public int Id { get; set; }
+        public int UsuarioId { get; set; }
         public int Boletos { get; set; }
         
 
@@ -25,9 +26,12 @@ namespace CarnetEmprendedor.Pages.Eventos.Interesados
         {
         ViewData["EventoId"] = new SelectList(_context.Evento, "Id", "Nombre");
             Id = id.Value;
-           // Boletos = _context.Evento.Find(Id).NumBoletos; 
-            
-            return Page();
+            // Boletos = _context.Evento.Find(Id).NumBoletos; 
+            var Identity = User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
+            UsuarioId= _context.Usuario.Where(u => u.IdentityUserId == Identity).SingleOrDefault().Id;
+          
+          //  UsuarioId = _context.Usuario.Where(u => u.IdentityUserId == Identity).SingleOrDefault().ListaInteresado;
+           return Page();
         }
 
         [BindProperty]
@@ -42,7 +46,10 @@ namespace CarnetEmprendedor.Pages.Eventos.Interesados
           //  Boletos = Boletos - 1;
             //_context.Evento.Find(Id).NumBoletos = Boletos; 
             _context.ListaInteresado.Add(ListaInteresado);
-            
+
+           var Evento =  _context.Evento.FirstOrDefault(m => m.Id == ListaInteresado.EventoId);
+            Evento.NumBoletos -= 1;
+
             await _context.SaveChangesAsync();
 
             return RedirectToPage("../Index");

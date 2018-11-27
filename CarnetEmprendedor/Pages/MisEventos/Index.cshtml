@@ -1,0 +1,77 @@
+﻿@page
+@model CarnetEmprendedor.Pages.MisEventos.IndexModel
+@{
+    ViewData["Title"] = "MisEventosIndex";
+}
+
+<h2>Mis Eventos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MisEventos[0].Categoria.CategoriaEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MisEventos[0].PuntosEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MisEventos[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MisEventos[0].Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MisEventos[0].Inicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MisEventos[0].Fin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MisEventos[0].Lugar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MisEventos[0].Imagen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MisEventos[0].NumBoletos)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.MisEventos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.CategoriaEvento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PuntosEvento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Inicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lugar)
+                </td>
+                <td>
+                    <!--  <img id="logo" src="~/images/@item.Imagen" alt="error" />-->
+                    <img id="logo" src="@item.Imagen" alt="error" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumBoletos)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
