@@ -8,17 +8,6 @@ namespace CarnetEmprendedor.Tests
     public class UnitTestServicioCarrera
     {
         [TestMethod]
-        public void TestMethod1()
-        {
-        }
-
-        [ClassInitialize]
-        public void SetUp()
-        {
-
-        }
-
-        [TestMethod]
         public void No_CreateCarreera_WithNameFieldEmpty()
         {
             var Servicio = new ServicioMateria();
@@ -40,6 +29,7 @@ namespace CarnetEmprendedor.Tests
 
             var Carrera = new Materia()
             {
+                Id = 1,
                 Nombre = "Carrera 1"
             };
 

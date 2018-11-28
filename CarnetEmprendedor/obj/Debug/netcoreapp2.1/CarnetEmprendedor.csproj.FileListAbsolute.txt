@@ -97,3 +97,4 @@ C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcore
 C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\Razor\Pages\Eventos\Interesados\Edit.g.cshtml.cs
 C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\Razor\Pages\Eventos\Interesados\Index.g.cshtml.cs
 C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\Razor\Pages\MisEventos\Index.g.cshtml.cs
+C:\Users\jaime\Desktop\carnetEmprendedorCore\CarnetEmprendedor\obj\Debug\netcoreapp2.1\CarnetEmprendedor.csprojAssemblyReference.cache

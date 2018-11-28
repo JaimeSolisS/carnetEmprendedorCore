@@ -1,5 +1,6 @@
 using CarnetEmprendedor.Data;
 using CarnetEmprendedor.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CarnetEmprendedor.Tests
@@ -7,17 +8,6 @@ namespace CarnetEmprendedor.Tests
     [TestClass]
     public class UnitTestServicioCategoria
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
-
-        [ClassInitialize]
-        public void SetUp()
-        {
-
-        }
-
         [TestMethod]
         public void No_CreateCategory_WithCategoryEventFieldEmpty()
         {
