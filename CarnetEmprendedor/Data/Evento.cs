@@ -48,6 +48,7 @@ namespace CarnetEmprendedor.Data
 
         [Required]
         [Display(Name = "Número de boletos")]
+       [Range(1,int.MaxValue, ErrorMessage = "La cantidad de boletes debe ser mayor a ${1}")]
         public int NumBoletos { get; set; }
 
         public virtual IList<ListaInteresado> ListaInteresado { get; set; }

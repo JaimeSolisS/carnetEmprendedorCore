@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using CarnetEmprendedor.Data;
+using CarnetEmprendedor.Services;
 
 namespace CarnetEmprendedor.Pages.Categorias
 {
@@ -33,8 +34,11 @@ namespace CarnetEmprendedor.Pages.Categorias
                 return Page();
             }
 
-            _context.Categoria.Add(Categoria);
-            await _context.SaveChangesAsync();
+            //_context.Categoria.Add(Categoria);
+            //await _context.SaveChangesAsync();
+
+            var Servicio = new ServicioCategoria(_context);
+            await Servicio.CrearNuevoAsync(Categoria);
 
             return RedirectToPage("./Index");
         }

@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarnetEmprendedor", "CarnetEmprendedor\CarnetEmprendedor.csproj", "{8E33BA66-AD82-4508-888F-8163B2B175CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarnetEmprendedor", "CarnetEmprendedor\CarnetEmprendedor.csproj", "{8E33BA66-AD82-4508-888F-8163B2B175CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarnetEmprendedor.Tests", "CarnetEmprendedor.Tests\CarnetEmprendedor.Tests.csproj", "{F824AFF5-468F-47CF-933E-8671F5FF3A1E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E33BA66-AD82-4508-888F-8163B2B175CC} = {8E33BA66-AD82-4508-888F-8163B2B175CC}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{8E33BA66-AD82-4508-888F-8163B2B175CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E33BA66-AD82-4508-888F-8163B2B175CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E33BA66-AD82-4508-888F-8163B2B175CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F824AFF5-468F-47CF-933E-8671F5FF3A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F824AFF5-468F-47CF-933E-8671F5FF3A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F824AFF5-468F-47CF-933E-8671F5FF3A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F824AFF5-468F-47CF-933E-8671F5FF3A1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
